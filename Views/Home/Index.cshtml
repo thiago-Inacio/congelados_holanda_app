@@ -1,0 +1,86 @@
+@model CongeladosHolandaApp.Models.FinanceiroViewModel
+
+@{
+    ViewData["Title"] = "Controle Financeiro";
+}
+
+<div class="container mt-5">
+    <!-- Título da página -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h1 class="text-center text-primary fw-bold">Congelados do Holanda – Controle Financeiro</h1>
+            <hr class="border-primary">
+        </div>
+    </div>
+
+    <!-- Cards de Resumo Financeiro -->
+    <div class="row mb-5">
+        <!-- Total de Vendas -->
+        <div class="col-md-3 mb-3">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-light">
+                    <h5 class="card-title text-muted">Total de Vendas do Mês</h5>
+                    <p class="card-text fs-3 fw-bold text-success">@Model.TotalVendas.ToString("C")</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Despesas -->
+        <div class="col-md-3 mb-3">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-light">
+                    <h5 class="card-title text-muted">Despesas do Mês</h5>
+                    <p class="card-text fs-3 fw-bold text-danger">@Model.Despesas.ToString("C")</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lucro Estimado -->
+        <div class="col-md-3 mb-3">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-light">
+                    <h5 class="card-title text-muted">Lucro Estimado</h5>
+                    <p class="card-text fs-3 fw-bold text-info">@Model.Lucro.ToString("C")</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estoque Total -->
+        <div class="col-md-3 mb-3">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-light">
+                    <h5 class="card-title text-muted">Produtos em Estoque</h5>
+                    <p class="card-text fs-3 fw-bold text-warning">@Model.EstoqueTotal unidades</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabela de Produtos -->
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4 text-secondary">Produtos em Estoque</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Valor Unitário</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var produto in Model.Produtos)
+                        {
+                            <tr>
+                                <td class="fw-semibold">@produto.Nome</td>
+                                <td>@produto.Quantidade unid.</td>
+                                <td>@produto.ValorUnitario.ToString("C")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

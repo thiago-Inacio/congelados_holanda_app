@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ePXyHeaABt0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thiag\\CongeladosHolandaApp\\CongeladosHolandaApp\\CongeladosHolandaApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thiag\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}
